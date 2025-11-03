@@ -3,7 +3,7 @@ public class CharacterFrequency {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         String input = s.nextLine();
-        int[] freq = new int[256]; // Assuming ASCII characters
+        int[] freq = new int[256]; // Assuming ASCII characte
 
         for (int i = 0; i < input.length(); i++) {
             char ch = input.charAt(i);
