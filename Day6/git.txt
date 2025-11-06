@@ -1,0 +1,38 @@
+git init
+Purpose: Create a new Git repository.
+mkdir my-project
+cd my-project
+git init
+
+git add
+Purpose: Stage changes (prepare them for commit).
+git add file.txt          # Add one file
+git add .                 # Add all modified/new files in the directory
+
+git commit
+Purpose: Save a snapshot of your project history.
+git commit -m "Add feature X"
+
+git branch
+Purpose: Create or manage different versions of your project.
+git branch              # List branches
+git branch new-feature  # Create a new branch
+git checkout new-feature  # Switch to that branch
+
+git merge
+Purpose: Combine changes from one branch into another.
+git checkout main       # Switch to main branch
+git merge new-feature   # Merge new-feature branch into main
+
+git push
+Purpose: Upload local commits to a remote repository (like GitHub).
+git push origin main
+
+TL;DR — Quick Summary
+Command	       What It Does       	Example
+git init	   Start a repo	        git init
+git add	       Stage files	        git add .
+git commit	   Save staged files	git commit -m "message"
+git branch	   Manage branches	    git branch feature
+git merge	   Combine branches	    git merge feature
+git push	   Upload commits	    git push origin main
