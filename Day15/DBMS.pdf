@@ -1,0 +1,229 @@
+✅ DBMS (Database Management System)
+Definition
+
+A Database Management System (DBMS) is software that is used to store, manage, and retrieve data efficiently.
+It provides an interface between the user (or application) and the database.
+
+Key Features
+
+Stores data in files or hierarchical/network structures
+
+Supports basic CRUD operations (Create, Read, Update, Delete)
+
+Ensures minimal data redundancy
+
+Provides data security and backup
+
+Allows multiple users to access data
+
+Examples
+
+Microsoft Access
+
+XML databases
+
+Hierarchical DBMS (IMS)
+
+Network DBMS (IDMS)
+
+Limitations
+
+No strong relationship between data
+
+Less secure compared to RDBMS
+
+Does not follow any strict data integrity rules
+
+✅ RDBMS (Relational Database Management System)
+Definition
+
+An RDBMS is an advanced version of DBMS which stores data in tables (rows and columns)
+and enforces relationships between tables using keys.
+
+The concept is based on E. F. Codd’s Relational Model.
+
+Key Features
+
+Data stored in tabular format
+
+Supports relationships between tables
+
+Enforces constraints (PK, FK, UNIQUE, CHECK)
+
+Supports SQL (Structured Query Language)
+
+Ensures ACID properties (Atomicity, Consistency, Isolation, Durability)
+
+Provides high security and normalization
+
+Examples
+
+MySQL
+
+Oracle
+
+SQL Server
+
+PostgreSQL
+
+SQLite
+
+Advantages
+
+Eliminates data redundancy
+
+Maintains data integrity
+
+Easy data manipulation using SQL
+
+Multi-user support
+
+🔑 Primary Key
+Definition
+
+A Primary Key (PK) is a column (or set of columns) in a table that uniquely identifies each record.
+
+Characteristics
+
+Must be unique
+
+Cannot be NULL
+
+Only one primary key per table
+
+Used to establish relationships with other tables
+
+Example
+Student Table
+-------------------------
+StudentID | Name | Class
+1         | Ram  | 10
+2         | Rita | 9
+
+
+Here, StudentID is the Primary Key.
+
+Real-life analogy
+
+A primary key is like a roll number or Aadhar number — unique for every person.
+
+🔗 Foreign Key
+Definition
+
+A Foreign Key (FK) is a column in one table that refers to the Primary Key of another table, thus creating a relationship.
+
+Characteristics
+
+Can contain duplicate values
+
+Can be NULL (unless restricted)
+
+Ensures referential integrity
+
+Helps link tables
+
+Example
+Student Table (Parent)
+-------------------------
+StudentID (PK) | Name
+
+Marks Table (Child)
+-------------------------
+MarkID | StudentID (FK) | Marks
+
+
+Here, StudentID in the Marks table is a Foreign Key referencing StudentID in the Student table.
+
+Real-life analogy
+
+A foreign key is like using someone’s Aadhar number in another form to reference their identity.
+🟦 1. CREATE (Create a Table)
+Syntax
+CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    ...
+);
+
+Example
+
+Create a table named students:
+
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    age INT,
+    class VARCHAR(10)
+);
+
+🟩 2. INSERT (Insert Data Into Table)
+Syntax
+INSERT INTO table_name (column1, column2, ...)
+VALUES (value1, value2, ...);
+
+Example
+
+Insert a record into students:
+
+INSERT INTO students (student_id, name, age, class)
+VALUES (1, 'Rahul', 15, '10A');
+
+
+Insert multiple rows:
+
+INSERT INTO students (student_id, name, age, class)
+VALUES
+(2, 'Anita', 16, '10B'),
+(3, 'Kiran', 14, '9A');
+
+🟨 3. SELECT (Retrieve Data)
+Syntax
+SELECT column1, column2 FROM table_name;
+
+Example
+
+Select all columns:
+
+SELECT * FROM students;
+
+
+Select specific columns:
+
+SELECT name, age FROM students;
+
+🟧 4. WHERE (Filtering Records)
+Syntax
+SELECT column1, column2
+FROM table_name
+WHERE condition;
+
+Example
+
+Select students whose age is greater than 15:
+
+SELECT * FROM students
+WHERE age > 15;
+
+
+Select student named "Rahul":
+
+SELECT * FROM students
+WHERE name = 'Rahul';
+
+🟥 5. ORDER BY (Sorting Records)
+Syntax
+SELECT * FROM table_name
+ORDER BY column_name ASC|DESC;
+
+Example
+
+Sort students by age (ascending):
+
+SELECT * FROM students
+ORDER BY age ASC;
+
+
+Sort students by name (descending):
+
+SELECT * FROM students
+ORDER BY name DESC;
